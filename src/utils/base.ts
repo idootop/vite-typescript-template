@@ -33,6 +33,17 @@ export const range = (start: number, end?: number) => {
   return Array.from({ length: end - start }, (_, index) => start + index);
 };
 
+export const toFixed = (n: number, fractionDigits = 2) => {
+  let s = n.toFixed(fractionDigits);
+  while (s[s.length - 1] === '0') {
+    s = s.substring(0, s.length - 1);
+  }
+  if (s[s.length - 1] === '.') {
+    s = s.substring(0, s.length - 1);
+  }
+  return s;
+};
+
 export const toSet = <T = any>(datas: T[], byKey?: (e: T) => any) => {
   if (byKey) {
     const keys = {};
