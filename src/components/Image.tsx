@@ -59,8 +59,8 @@ export const Image = forwardRef((props: ImageProps, ref: any) => {
     <>
       <img
         ref={ref}
-        src={src}
         {...boxProps}
+        src={src}
         onLoad={() => setIsLoaded(true)}
         onError={() => setIsError(true)}
       />
